@@ -10,6 +10,7 @@ class CorPecaCarro{
     public $paralama;
     public $teto;
     public $traseira;
+    public $capo;
 }
 
 class Carro implements Veiculo {
@@ -47,7 +48,6 @@ class Carro implements Veiculo {
     }
 
     public function parar() : void {
-        $this->velocidadeAtual;
         for ($i = $this->velocidadeAtual; $i = 0; $i-- ) {
             echo "carro desacelerando.... " . $this->velocidadeAtual + $i . "Km/h";            
         }
@@ -85,6 +85,7 @@ class Carro implements Veiculo {
 $carroColorido = new Carro();
 $carroColorido->setarVelocidadeMaxima(100);
 $carroColorido->acelerar(10);
+$carroColorido->acelerar(50);
 $carroColorido->obterStatusFuncionamentoCarro();
 $carroColorido->obtemEstadoMotor();
 $carroColorido->parar();
@@ -96,7 +97,18 @@ $coresPecas = new CorPecaCarro();
 $coresPecas->porta = "azul";
 $coresPecas->traseira = "amarelo";
 $coresPecas->teto = "verde";
+$coresPecas->capo = "rosa";
 
 $carroColorido->pintar($coresPecas);
 echo "\n";
-print_r($carro);
+print_r($carroColorido);
+
+
+// TESTES COMO SERIA EXEMPLO
+// public function test_if_carro_esta_pintado_com_cor_rosa_no_capo () {
+//     $car = new Carro;
+//     $corPecaCarro = new CorPecaCarro();
+//     $corPecaCarro->capo = "verde";
+//     $car->pintar($corPecaCarro);
+//     $this->assertIsEqual($car->cor["capo"], "verde");
+// }
